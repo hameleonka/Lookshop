@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Looksop</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="height: 0; width: 0; position: absolute;">
+    <symbol id="icon-search" viewBox="0 0 15 15">
+        <path d="M1072.25,18.136a5.947,5.947,0,1,0-9.37-1.256l-3.43,3.428a1.545,1.545,0,0,0,0,2.2l0.02,0.02a1.558,1.558,0,0,0,2.2,0l3.42-3.428A5.966,5.966,0,0,0,1072.25,18.136Zm-7.03-1.384a3.988,3.988,0,1,1,5.64,0A4,4,0,0,1,1065.22,16.752Z"
+              transform="translate(-1059 -8)"/>
+    </symbol>
+    <symbol id="icon-plus" viewBox="0 0 533.333 533.333">
+        <path d="M516.667,200H333.333V16.667C333.333,7.462,325.871,0,316.667,0h-100C207.462,0,200,7.462,200,16.667V200H16.667   C7.462,200,0,207.462,0,216.667v100c0,9.204,7.462,16.666,16.667,16.666H200v183.334c0,9.204,7.462,16.666,16.667,16.666h100   c9.204,0,16.667-7.462,16.667-16.666V333.333h183.333c9.204,0,16.667-7.462,16.667-16.666v-100   C533.333,207.462,525.871,200,516.667,200z"/>
+    </symbol>
+    <symbol id="icon-fb" viewBox="0 0 9 18">
+        <path d="M943,674.948h1.929v-1.81a4.7,4.7,0,0,1,.621-2.79,3.475,3.475,0,0,1,2.993-1.355,12.575,12.575,0,0,1,3.458.334l-0.482,2.759a6.739,6.739,0,0,0-1.554-.224c-0.75,0-1.422.258-1.422,0.983v2.1h3.076l-0.215,2.693h-2.861V687h-3.614v-9.36H943v-2.693Z"
+              transform="translate(-943 -669)"/>
+    </symbol>
+    <symbol id="icon-tw" viewBox="0 0 20.316 16.562">
+        <path d="M1012.92,672.169a8.387,8.387,0,0,1-2.4.659,4.188,4.188,0,0,0,1.83-2.315,8.233,8.233,0,0,1-2.64,1.016,4.173,4.173,0,0,0-7.22,2.863,3.756,3.756,0,0,0,.11.953,11.828,11.828,0,0,1-8.6-4.372,4.2,4.2,0,0,0,1.291,5.587,4.142,4.142,0,0,1-1.89-.524v0.053a4.184,4.184,0,0,0,3.346,4.1,4.167,4.167,0,0,1-1.884.072,4.179,4.179,0,0,0,3.9,2.906,8.394,8.394,0,0,1-6.176,1.732,11.859,11.859,0,0,0,18.268-10.025c0-.182-0.01-0.362-0.02-0.541A8.46,8.46,0,0,0,1012.92,672.169Z"
+              transform="translate(-992.594 -670.219)"/>
+    </symbol>
+    <symbol id="icon-p" viewBox="0 0 21.06 21">
+        <path d="M1057.46,667a10.5,10.5,0,0,0-4.23,20.117,9.578,9.578,0,0,1,.19-2.411c0.2-.852,1.35-5.721,1.35-5.721a4.093,4.093,0,0,1-.33-1.662c0-1.556.9-2.718,2.03-2.718a1.406,1.406,0,0,1,1.42,1.576,22.122,22.122,0,0,1-.93,3.727,1.627,1.627,0,0,0,1.66,2.022c2,0,3.34-2.555,3.34-5.583,0-2.3-1.55-4.023-4.38-4.023a4.981,4.981,0,0,0-5.19,5.028,3,3,0,0,0,.7,2.06,0.515,0.515,0,0,1,.15.585c-0.05.193-.17,0.658-0.22,0.843a0.357,0.357,0,0,1-.52.262c-1.48-.6-2.16-2.2-2.16-4.011,0-2.983,2.52-6.559,7.53-6.559,4.02,0,6.67,2.9,6.67,6.015,0,4.119-2.3,7.2-5.69,7.2a3.032,3.032,0,0,1-2.57-1.309s-0.61,2.419-.74,2.886a8.663,8.663,0,0,1-1.06,2.25A10.506,10.506,0,1,0,1057.46,667Z"
+              transform="translate(-1046.94 -667)"/>
+    </symbol>
+    <symbol id="arrow-back" viewBox="0 0 477.175 477.175">
+        <path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225   c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"
+              fill="#979797"/>
+    </symbol>
+    <symbol id="arrow-next" viewBox="0 0 477.175 477.175">
+        <path d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5   c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z"
+              fill="#FFFFFF"/>
+    </symbol>
+</svg>
+<header class="header-header">
+
+    <div class="customer-block">
+        <div class="container-centerer">
+            <div class="customer-block-custom-care">
+                <p>Custom care: 888-23-4567</p>
+            </div>
+            <div class="customer-block-customer-settings">
+                <div class="currency">
+                    <select style="max-width: 80%">
+                        <option>$ US</option>
+                        <option>РУБ Russia</option>
+                    </select>
+                </div>
+                <div class="account">
+
+                    <a href="#"><span class="account-icon"></span>My account</a>
+                </div>
+                <div class="search">
+                    <a href="#">
+                        <svg class="icon-search-cls-1" width="53.086%" height="100%">
+                            <use xlink:href="#icon-search"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="header-nav">
+        <div class="container-centerer">
+            <div class="header-nav_logo">
+                <img src="img/logo_lookshop.png">
+            </div>
+            <ul class="header-nav_links">
+                <li><a href="#">new<span class="icon-arrow-down"></span></a></li>
+                <li><a href="#">designers<span class="icon-arrow-down"></span></a></li>
+                <li><a href="#">women<span class="icon-arrow-down"></span></a></li>
+                <li><a href="#">men<span class="icon-arrow-down"></span></a></li>
+                <li><a href="#">clearence<span class="icon-arrow-down"></span></a></li>
+            </ul>
+            <div class="header-nav_cart">
+                <table class="cart">
+                    <tr>
+                        <td class="cart-header">Your cart</td>
+                        <td class="cart-header-viewall"><span class="icon-arrow-down-grey"></span></td>
+                    </tr>
+                    <tr class="cart-item">
+                        <td class="cart-item-name">Item</td>
+                        <td class="cart-item-price">Price</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="cart-total">
+                            <span class="cart-icon"></span>
+                            <span class="total-quantity">0</span>
+                            <span class="total-items">Items |</span>
+                            <span class="total-currency"> $</span>
+                            <span class="total-sum">0</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+<div class="ad-slider">
+
+    <!--<input class="notshow" type="radio" name="radio-btn" id="slider-img_1" checked/>-->
+
+    <div class="slide-container">
+        <div class="slide">
+            <img src="img/ad-slider_photo1.png">
+            <div class="slide-text-block">
+                <span class="slide-text-italic"> Crazy </span>
+                <img src="img/crazy-summer_sign.png">
+                <span class="slider-lines"></span>
+                <span class="slide-text-capitalized">Woman collection</span>
+                <a class="btn slide-text-block-btn" href="#">Shop now <span class="icon-arrow-right"></span></a>
+            </div>
+        </div>
+
+        <!--<div class="slide-nav">-->
+        <!--<label for="slider-img_3" class="prev">-->
+        <!--<svg width="100%" height="100%">-->
+        <!--<use xlink:href="#icon-arrow_previous"/>-->
+        <!--</svg>-->
+        <!--</label>-->
+        <!--<label for="slider-img_2" class="next">-->
+        <!--<svg width="100%" height="100%">-->
+        <!--<use xlink:href="#icon-arrow_next"/>-->
+        <!--</svg>-->
+        <!--</label>-->
+        <!--</div>-->
+    </div>
+
+
+    <!--<input type="radio" name="radio-btn" id="slider-img_2" checked/>-->
+
+    <!--<div class="slide-container">-->
+
+    <!--<div class="slide-text-block">-->
+    <!--<span class="text-italic">Crazy2</span>-->
+    <!--<img src="img/crazy-summer_sign.png">-->
+    <!--<span class="text-capitalized">Woman collection</span>-->
+    <!--<a href="#">Shop now</a>-->
+    <!--</div>-->
+    <!--<div class="slide-nav">-->
+    <!--<label for="slider-img_1" class="prev">-->
+    <!--<svg width="100%" height="100%">-->
+    <!--<use xlink:href="#icon-arrow_previous"/>-->
+    <!--</svg>-->
+    <!--</label>-->
+    <!--<label for="slider-img_3" class="next">-->
+    <!--<svg width="100%" height="100%">-->
+    <!--<use xlink:href="#icon-arrow_next"/>-->
+    <!--</svg>-->
+    <!--</label>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--<input type="radio" name="radio-btn" id="slider-img_3" checked/>-->
+
+    <!--<div class="slide-container notshow">-->
+
+    <!--<div class="slide-header">-->
+    <!--<span class="text-italic">Crazy3</span>-->
+    <!--<img src="img/crazy-summer_sign.png">-->
+    <!--<span class="text-capitalized">Woman collection</span>-->
+    <!--<a href="#">Shop now</a>-->
+    <!--</h2>-->
+    <!--<div class="slide-nav">-->
+    <!--<label for="slider-img_2" class="prev">-->
+    <!--<svg width="100%" height="100%">-->
+    <!--<use xlink:href="#icon-arrow_previous"/>-->
+    <!--</svg>-->
+    <!--</label>-->
+    <!--<label for="slider-img_1" class="next">-->
+    <!--<svg width="100%" height="100%">-->
+    <!--<use xlink:href="#icon-arrow_next"/>-->
+    <!--</svg>-->
+    <!--</label>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="slider_dots">-->
+    <!--<label for="slider-img_1" class="nav-dot" id="img-dot-1"></label>-->
+    <!--<label for="slider-img_2" class="nav-dot" id="img-dot-2"></label>-->
+    <!--<label for="slider-img_3" class="nav-dot" id="img-dot-3"></label>-->
+    <!--</div>-->
+    <!--</div>-->
+</div>
+<div class="contacts">
+    <div class="container-centerer">
+        <div class="stayUpdated-block">
+            <form class="stayUpdated-form" action="#" method="post" name="login-form">
+                <fieldset>
+                    <label for="stayUpdated-form-input">Stay updated</label>
+                    <input id="stayUpdated-form-input" type="email" name="e-mail" value=""
+                           placeholder="Your email address">
+                    <button class="btn btn-stayUpdated-form" type="submit">
+                        <svg class="icon-plus_cls-1" width="100%" height="100%">
+                            <use xlink:href="#icon-plus"/>
+                        </svg>
+                    </button>
+                </fieldset>
+            </form>
+        </div>
+
+
+        <div class="social-block">
+            <p>Find us here</p>
+            <a href="#">Facebook
+                <svg class="icon-fb" width="100" height="100%">
+                    <use xlink:href="#icon-fb"/>
+                </svg>
+            </a>
+            <a href="#">Twitter
+                <svg class="icon-tw" width="100%" height="100%">
+                    <use xlink:href="#icon-tw"/>
+                </svg>
+            </a>
+            <a href="#">P
+                <svg class="icon-p" width="100%" height="100%">
+                    <use xlink:href="#icon-p"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="main-content-banner container-centerer">
+    <a href="#" class="banner-left">
+        <div class="banner-left-img">
+            <img src="img/banner-picture-left.jpg">
+        </div>
+        <h2 class="banner-header banner-left-header">
+            <span class="bold">Best</span>
+            <span class="thin">Outfits</span>
+            <div class="and"><span >&</span></div>
+            <span class="super-bold">Looks</span>
+        </h2>
+    </a>
+    <div class="banner-right">
+
+        <a href="#" class="banner-right-top">
+            <div class="banner-right-top-img">
+                <img src="img/banner-picture-right-top.jpg">
+            </div>
+            <h2 class="banner-header banner-right-top-header">
+                <span class="italic">Summer</span>
+                <span class="thin">Party</span>
+                <span class="small">Collection</span>
+            </h2>
+
+        </a>
+        <a href="#" class="banner-right-bottom-left">
+            <div class="banner-right-bottom-left-img">
+                <img src="img/banner-picture-right-bottom-left.jpg">
+            </div>
+            <h2 class="banner-header banner-right-bottom-left-header">
+                <span class="thin">Best sellers</span>
+            </h2>
+        </a>
+        <a href="#" class="banner-right-bottom-right">
+            <div class="banner-right-bottom-right-img">
+                <img src="img/banner-picture-right-bottom-right.jpg">
+            </div>
+            <div class="banner-header banner-right-bottom-right-header">
+                <h2>Fall<br>leather</h2>
+                <div class="btn banner-btn">
+                    <span>Shop now</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<section class="main-content-carusel">
+    <div class="container-centerer">
+
+        <nav class="carusel-nav">
+            <ul>
+                <li><a href="#" class="carusel-nav-active">What's hot?</a></li>
+                <li><a href="#">Designers</a></li>
+                <li><a href="#">Featured</a></li>
+                <li><a href="#">Latest</a></li>
+            </ul>
+        </nav>
+
+        <div class="carusel-nav-arrows">
+            <div class="arrow">
+                <svg class="cls-2" width="100%" height="100%">
+                    <use xlink:href="#arrow-back"/>
+                </svg>
+            </div>
+            <div class="arrow carusel-nav-arrow-active">
+                <svg class="cls-2" width="100%" height="100%">
+                    <use xlink:href="#arrow-next"/>
+                </svg>
+            </div>
+        </div>
+
+    </div>
+    <div class="carusel-content">
+
+        <article class="item">
+            <a href="#" class="item-picture">
+                <img src="img/carusel-item_1.png">
+            </a>
+            <div class="item-description">
+                <a href="#" class="item-description-link">
+                    <h3 class="item-name">Mimosa lace dress</h3>
+                    <span class="item-price">$76.95</span>
+                </a>
+                <form method="post" id="carusel-addToCart" action="/addToCart">
+                    <button class="btn btn-addToCart-form" type="submit">Add to cart
+                        <svg class="icon-plus_cls-1" width="100%" height="100%">
+                            <use xlink:href="#icon-plus"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </article>
+
+    </div>
+</section>
+<section class="clearance">
+    <div class="container-centerer">
+        <div class="clearance-logo">
+            <img src="img/icon-clearance.png">
+        </div>
+        <div class="clearance-content">
+
+            <article class="item">
+            <a class="item-picture">
+                <img src="img/clearance-item_1.png">
+            </a>
+
+            <div class="item-description">
+                <a href="#" class="item-description-link">
+                    <h3 class="item-name">Mimosa lace dress</h3>
+                    <span class="item-price">$76.95</span>
+                </a>
+
+                <form method="post" id="clearance-addToCart" action="/addToCart">
+                    <button class="btn btn-addToCart-form" type="submit">Add to cart
+                        <svg class="icon-plus_cls-1" width="100%" height="100%">
+                            <use xlink:href="#icon-plus"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </article>
+
+            <article class="item">
+                <a class="item-picture">
+                    <img src="img/clearance-item_2.png">
+                </a>
+
+                <div class="item-description">
+                    <a href="#" class="item-description-link">
+                        <h3 class="item-name">Sofi blouse</h3>
+                        <span class="item-price">$26.95</span>
+                    </a>
+
+                    <form method="post" id="clearance-addToCart" action="/addToCart">
+                        <button class="btn btn-addToCart-form" type="submit">Add to cart
+                            <svg class="icon-plus_cls-1" width="100%" height="100%">
+                                <use xlink:href="#icon-plus"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </article>
+
+            <article class="item">
+                <a class="item-picture">
+                    <img src="img/clearance-item_3.png">
+                </a>
+
+                <div class="item-description">
+                    <a href="#" class="item-description-link">
+                        <h3 class="item-name">Gooding shorts</h3>
+                        <span class="item-price">$79.95</span>
+                    </a>
+
+                    <form method="post" id="clearance-addToCart" action="/addToCart">
+                        <button class="btn btn-addToCart-form" type="submit">Add to cart
+                            <svg class="icon-plus_cls-1" width="100%" height="100%">
+                                <use xlink:href="#icon-plus"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </article>
+
+            <article class="item">
+                <a class="item-picture">
+                    <img src="img/clearance-item_4.png">
+                </a>
+
+                <div class="item-description">
+                    <a href="#" class="item-description-link">
+                        <h3 class="item-name">Mimosa lace dress</h3>
+                        <span class="item-price">$76</span>
+                    </a>
+
+                    <form method="post" id="clearance-addToCart" action="/addToCart">
+                        <button class="btn btn-addToCart-form" type="submit">Add to cart
+                            <svg class="icon-plus_cls-1" width="100%" height="100%">
+                                <use xlink:href="#icon-plus"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+<section class="favourite-brands">
+    <div class="container-centerer">
+        <h2>Favourite brands</h2>
+        <div class="favourite-brands-logos">
+            <div class="brand-logo">
+                <img src="img/brand-logo_addict.png">
+            </div>
+            <div class="brand-logo">
+                <img src="img/brand-logo_abandon_ship.png">
+            </div>
+            <div class="brand-logo">
+                <img src="img/brand-logo_adidas.png">
+            </div>
+            <div class="brand-logo">
+                <img src="img/brand-logo_boy_london.png">
+            </div>
+            <div class="brand-logo">
+                <img src="img/brand-logo_converse.png">
+            </div>
+            <div class="brand-logo">
+                <img src="img/brand-logo_calvin_klein.png">
+            </div>
+            <div class="brand-logo">
+                <img src="img/brand-logo_edwin.png">
+            </div>
+            <div class="brand-logo">
+                <img src="img/brand-logo_grenson.png">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about">
+    <div class="container-centerer">
+        <h2>About LookShop</h2>
+        <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean
+            sollicitudin,
+            lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit
+            amet
+            nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt
+            auctor
+            a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad
+            litora
+            torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis
+            dapibus
+            condimentum sit amet a augue.</p>
+    </div>
+</section>
+
+<section class="we-accept">
+    <div class="container-centerer">
+        <span>We accept</span>
+        <div class="accepted-cards">
+            <img src="img/accepted-cards.png">
+        </div>
+    </div>
+</section>
+
+<section class="about-info">
+    <div class="container-centerer">
+        <section class="customer-service">
+            <h3 class="info-header">Customer service</h3>
+            <ul>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Terms of payment</a></li>
+                <li><a href="#">Terms of sale</a></li>
+                <li><a href="#">Delivery terms and conditions</a></li>
+                <li><a href="#">Returns and Refunds</a></li>
+            </ul>
+        </section>
+        <section class="information">
+            <h3 class="info-header">Information</h3>
+            <ul>
+                <li><a href="#">Affiliate</a></li>
+                <li><a href="#">Cookies</a></li>
+                <li><a href="#">How to shop</a></li>
+                <li><a href="#">About Nelly</a></li>
+                <li><a href="#">Investor relations</a></li>
+            </ul>
+        </section>
+        <section class="campaigns">
+            <h3 class="info-header">Campaigns</h3>
+            <ul>
+                <li><a href="#">Evening dresses</a></li>
+                <li><a href="#">Makeup</a></li>
+                <li><a href="#">Fashion forward</a></li>
+                <li><a href="#">Training clothes</a></li>
+                <li><a href="#">Special occasion dresses</a></li>
+            </ul>
+        </section>
+        <section class="stores">
+            <h3 class="info-header">Stores</h3>
+            <ul>
+                <li><a href="#">Paris</a></li>
+                <li><a href="#">New York</a></li>
+                <li><a href="#">London</a></li>
+                <li><a href="#">Madrid</a></li>
+                <li><a href="#">Tokio</a></li>
+            </ul>
+        </section>
+        <section class="social">
+            <h3 class="info-header">Social</h3>
+            <a class="social-btn" href="#">
+                <img src="img/icon-tw.png">
+            </a>
+            <a class="social-btn" href="#">
+                <img src="img/icon-p.png">
+            </a>
+            <a class="social-btn" href="#">
+                <img src="img/icon-fb.png">
+            </a>
+            <a class="social-btn" href="#">
+                <img src="img/icon-g.png">
+            </a>
+            <a class="social-btn" href="#">
+                <img src="img/icon-t.png">
+            </a>
+            <a class="social-btn" href="#">
+                <img src="img/icon-v.png">
+            </a>
+        </section>
+        <div class="icon-secured">
+            <img src="img/icon-secured.png">
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container-centerer">
+        <ul class="footer-nav">
+            <li><a href="#">Privacy & cookies</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Store directory</a></li>
+            <li><a href="#">About us</a></li>
+        </ul>
+        <div class="footer-copyright">
+            <p>© LookShop.com
+            All Rights Reserved</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
