@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Looksop</title>
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 </head>
@@ -12,6 +14,14 @@
     <symbol id="icon-search" viewBox="0 0 15 15">
         <path d="M1072.25,18.136a5.947,5.947,0,1,0-9.37-1.256l-3.43,3.428a1.545,1.545,0,0,0,0,2.2l0.02,0.02a1.558,1.558,0,0,0,2.2,0l3.42-3.428A5.966,5.966,0,0,0,1072.25,18.136Zm-7.03-1.384a3.988,3.988,0,1,1,5.64,0A4,4,0,0,1,1065.22,16.752Z"
               transform="translate(-1059 -8)"/>
+    </symbol>
+    <symbol id="icon-arrow_previous" viewBox="0 0 98.148 98.148">
+        <path d="M64.691,0.587L17.617,47.659c-0.75,0.75-0.75,2.078,0,2.828l47.076,47.076c0.375,0.375,0.883,0.586,1.414,0.586   c0.529,0,1.039-0.211,1.414-0.586l12.986-12.987c0.391-0.391,0.586-0.901,0.586-1.414c0-0.512-0.195-1.022-0.586-1.414   L47.834,49.073l32.672-32.674c0.752-0.75,0.75-2.078,0-2.828L67.52,0.587C66.738-0.195,65.473-0.195,64.691,0.587z"
+              fill="#cbcbca"/>
+    </symbol>
+    <symbol id="icon-arrow_next" viewBox="0 0 98.148 98.148">
+        <path d="M33.458,97.562L80.531,50.49c0.75-0.75,0.75-2.078,0-2.828L33.456,0.586C33.081,0.211,32.572,0,32.042,0   c-0.53,0-1.039,0.211-1.414,0.586L17.641,13.573c-0.391,0.391-0.586,0.902-0.586,1.414c0,0.512,0.195,1.023,0.586,1.414   l32.674,32.674L17.642,81.75c-0.751,0.75-0.75,2.078,0,2.828l12.987,12.984C31.411,98.344,32.677,98.344,33.458,97.562z"
+              fill="#cbcbca"/>
     </symbol>
     <symbol id="icon-plus" viewBox="0 0 533.333 533.333">
         <path d="M516.667,200H333.333V16.667C333.333,7.462,325.871,0,316.667,0h-100C207.462,0,200,7.462,200,16.667V200H16.667   C7.462,200,0,207.462,0,216.667v100c0,9.204,7.462,16.666,16.667,16.666H200v183.334c0,9.204,7.462,16.666,16.667,16.666h100   c9.204,0,16.667-7.462,16.667-16.666V333.333h183.333c9.204,0,16.667-7.462,16.667-16.666v-100   C533.333,207.462,525.871,200,516.667,200z"/>
@@ -30,11 +40,10 @@
     </symbol>
     <symbol id="arrow-back" viewBox="0 0 477.175 477.175">
         <path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225   c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"
-              fill="#979797"/>
+        />
     </symbol>
     <symbol id="arrow-next" viewBox="0 0 477.175 477.175">
-        <path d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5   c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z"
-              fill="#FFFFFF"/>
+        <path d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5   c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z"/>
     </symbol>
 </svg>
 <header class="header-header">
@@ -46,7 +55,7 @@
             </div>
             <div class="customer-block-customer-settings">
                 <div class="currency">
-                    <select style="max-width: 80%">
+                    <select>
                         <option>$ US</option>
                         <option>РУБ Russia</option>
                     </select>
@@ -66,37 +75,62 @@
         </div>
     </div>
     <nav class="header-nav">
-        <div class="container-centerer">
-            <div class="header-nav_logo">
-                <img src="img/logo_lookshop.png">
+        <div class="header-nav-decktop">
+            <div class="container-centerer">
+                <div class="header-nav_logo">
+                    <img src="img/logo_lookshop.png">
+                </div>
+
+                <ul class="header-nav_links">
+                    <li><a href="#">new<span class="icon-arrow-down"></span></a></li>
+                    <li><a href="#">designers<span class="icon-arrow-down"></span></a></li>
+                    <li><a href="#">women<span class="icon-arrow-down"></span></a></li>
+                    <li><a href="#">men<span class="icon-arrow-down"></span></a></li>
+                    <li><a href="#">clearence<span class="icon-arrow-down"></span></a></li>
+                </ul>
+
+                <div class="header-nav_cart">
+                    <table class="cart">
+                        <tr>
+                            <td class="cart-header">Your cart</td>
+                            <td class="cart-header-viewall"><span class="icon-arrow-down-grey"></span></td>
+                        </tr>
+                        <tr class="cart-item">
+                            <td class="cart-item-name">Item</td>
+                            <td class="cart-item-price">Price</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="cart-total">
+                                <span class="cart-icon"></span>
+                                <span class="total-quantity">0</span>
+                                <span class="total-items">Items |</span>
+                                <span class="total-currency"> $</span>
+                                <span class="total-sum">0</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
-            <ul class="header-nav_links">
-                <li><a href="#">new<span class="icon-arrow-down"></span></a></li>
-                <li><a href="#">designers<span class="icon-arrow-down"></span></a></li>
-                <li><a href="#">women<span class="icon-arrow-down"></span></a></li>
-                <li><a href="#">men<span class="icon-arrow-down"></span></a></li>
-                <li><a href="#">clearence<span class="icon-arrow-down"></span></a></li>
-            </ul>
-            <div class="header-nav_cart">
-                <table class="cart">
-                    <tr>
-                        <td class="cart-header">Your cart</td>
-                        <td class="cart-header-viewall"><span class="icon-arrow-down-grey"></span></td>
-                    </tr>
-                    <tr class="cart-item">
-                        <td class="cart-item-name">Item</td>
-                        <td class="cart-item-price">Price</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="cart-total">
-                            <span class="cart-icon"></span>
-                            <span class="total-quantity">0</span>
-                            <span class="total-items">Items |</span>
-                            <span class="total-currency"> $</span>
-                            <span class="total-sum">0</span>
-                        </td>
-                    </tr>
-                </table>
+        </div>
+        <div class="header-nav-mobile">
+            <div class="container-centerer">
+                <div class="header-nav-mobile_text">
+                    <span>Menu</span>
+                </div>
+
+                <div class="header-nav-mobile_links">
+                    <a href="#" class="menu-icon"></a>
+
+                    <div class="menu-wrapper">
+                        <ul class="menu-mobile">
+                            <li><a href="#">new</a></li>
+                            <li><a href="#">designers</a></li>
+                            <li><a href="#">women</a></li>
+                            <li><a href="#">men</a></li>
+                            <li><a href="#">clearence</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -105,90 +139,99 @@
 
 <div class="ad-slider">
 
-    <!--<input class="notshow" type="radio" name="radio-btn" id="slider-img_1" checked/>-->
+    <input type="radio" name="radio-btn" id="slider-img_1" checked/>
 
     <div class="slide-container">
         <div class="slide">
             <img src="img/ad-slider_photo1.png">
             <div class="slide-text-block">
                 <span class="slide-text-italic"> Crazy </span>
-                <img src="img/crazy-summer_sign.png">
+                <div class="slide-text-img"><img src="img/crazy-summer_sign.png"></div>
                 <span class="slider-lines"></span>
                 <span class="slide-text-capitalized">Woman collection</span>
                 <a class="btn slide-text-block-btn" href="#">Shop now <span class="icon-arrow-right"></span></a>
             </div>
-        </div>
 
-        <!--<div class="slide-nav">-->
-        <!--<label for="slider-img_3" class="prev">-->
-        <!--<svg width="100%" height="100%">-->
-        <!--<use xlink:href="#icon-arrow_previous"/>-->
-        <!--</svg>-->
-        <!--</label>-->
-        <!--<label for="slider-img_2" class="next">-->
-        <!--<svg width="100%" height="100%">-->
-        <!--<use xlink:href="#icon-arrow_next"/>-->
-        <!--</svg>-->
-        <!--</label>-->
-        <!--</div>-->
+            <div class="slide-nav">
+                <label for="slider-img_3" class="prev">
+                    <svg width="100%" height="100%">
+                        <use xlink:href="#icon-arrow_previous"/>
+                    </svg>
+                </label>
+                <label for="slider-img_2" class="next">
+                    <svg width="100%" height="100%">
+                        <use xlink:href="#icon-arrow_next"/>
+                    </svg>
+                </label>
+            </div>
+        </div>
     </div>
 
 
-    <!--<input type="radio" name="radio-btn" id="slider-img_2" checked/>-->
+    <input type="radio" name="radio-btn" id="slider-img_2"/>
 
-    <!--<div class="slide-container">-->
+    <div class="slide-container">
 
-    <!--<div class="slide-text-block">-->
-    <!--<span class="text-italic">Crazy2</span>-->
-    <!--<img src="img/crazy-summer_sign.png">-->
-    <!--<span class="text-capitalized">Woman collection</span>-->
-    <!--<a href="#">Shop now</a>-->
-    <!--</div>-->
-    <!--<div class="slide-nav">-->
-    <!--<label for="slider-img_1" class="prev">-->
-    <!--<svg width="100%" height="100%">-->
-    <!--<use xlink:href="#icon-arrow_previous"/>-->
-    <!--</svg>-->
-    <!--</label>-->
-    <!--<label for="slider-img_3" class="next">-->
-    <!--<svg width="100%" height="100%">-->
-    <!--<use xlink:href="#icon-arrow_next"/>-->
-    <!--</svg>-->
-    <!--</label>-->
-    <!--</div>-->
-    <!--</div>-->
+        <div class="slide">
+            <img src="img/ad-slider_photo2.png">
+            <div class="slide-text-block">
+                <span class="slide-text-italic"> Crazy </span>
+                <div class="slide-text-img"><img src="img/crazy-summer_sign.png"></div>
+                <span class="slider-lines"></span>
+                <span class="slide-text-capitalized">Woman collection</span>
+                <a class="btn slide-text-block-btn" href="#">Shop now <span class="icon-arrow-right"></span></a>
+            </div>
+            <div class="slide-nav">
+                <label for="slider-img_1" class="prev">
+                    <svg width="100%" height="100%">
+                        <use xlink:href="#icon-arrow_previous"/>
+                    </svg>
+                </label>
+                <label for="slider-img_3" class="next">
+                    <svg width="100%" height="100%">
+                        <use xlink:href="#icon-arrow_next"/>
+                    </svg>
+                </label>
+            </div>
+        </div>
+    </div>
 
-    <!--<input type="radio" name="radio-btn" id="slider-img_3" checked/>-->
+    <input type="radio" name="radio-btn" id="slider-img_3"/>
 
-    <!--<div class="slide-container notshow">-->
+    <div class="slide-container">
 
-    <!--<div class="slide-header">-->
-    <!--<span class="text-italic">Crazy3</span>-->
-    <!--<img src="img/crazy-summer_sign.png">-->
-    <!--<span class="text-capitalized">Woman collection</span>-->
-    <!--<a href="#">Shop now</a>-->
-    <!--</h2>-->
-    <!--<div class="slide-nav">-->
-    <!--<label for="slider-img_2" class="prev">-->
-    <!--<svg width="100%" height="100%">-->
-    <!--<use xlink:href="#icon-arrow_previous"/>-->
-    <!--</svg>-->
-    <!--</label>-->
-    <!--<label for="slider-img_1" class="next">-->
-    <!--<svg width="100%" height="100%">-->
-    <!--<use xlink:href="#icon-arrow_next"/>-->
-    <!--</svg>-->
-    <!--</label>-->
-    <!--</div>-->
-    <!--</div>-->
+        <div class="slide">
+            <img src="img/ad-slider_photo3.png">
+            <div class="slide-text-block">
+                <span class="slide-text-italic"> Crazy </span>
+                <div class="slide-text-img"><img src="img/crazy-summer_sign.png"></div>
+                <span class="slider-lines"></span>
+                <span class="slide-text-capitalized">Woman collection</span>
+                <a class="btn slide-text-block-btn" href="#">Shop now <span class="icon-arrow-right"></span></a>
+            </div>
+            <div class="slide-nav">
+                <label for="slider-img_2" class="prev">
+                    <svg width="100%" height="100%">
+                        <use xlink:href="#icon-arrow_previous"/>
+                    </svg>
+                </label>
+                <label for="slider-img_1" class="next">
+                    <svg width="100%" height="100%">
+                        <use xlink:href="#icon-arrow_next"/>
+                    </svg>
+                </label>
+            </div>
+        </div>
+    </div>
 
-    <!--<div class="slider_dots">-->
-    <!--<label for="slider-img_1" class="nav-dot" id="img-dot-1"></label>-->
-    <!--<label for="slider-img_2" class="nav-dot" id="img-dot-2"></label>-->
-    <!--<label for="slider-img_3" class="nav-dot" id="img-dot-3"></label>-->
-    <!--</div>-->
-    <!--</div>-->
+    <div class="slider_dots">
+        <label for="slider-img_1" class="nav-dot" id="img-dot-1"></label>
+        <label for="slider-img_2" class="nav-dot" id="img-dot-2"></label>
+        <label for="slider-img_3" class="nav-dot" id="img-dot-3"></label>
+    </div>
+
 </div>
+
 <div class="contacts">
     <div class="container-centerer">
         <div class="stayUpdated-block">
@@ -236,7 +279,7 @@
         <h2 class="banner-header banner-left-header">
             <span class="bold">Best</span>
             <span class="thin">Outfits</span>
-            <div class="and"><span >&</span></div>
+            <div class="and"><span>&</span></div>
             <span class="super-bold">Looks</span>
         </h2>
     </a>
@@ -247,20 +290,23 @@
                 <img src="img/banner-picture-right-top.jpg">
             </div>
             <h2 class="banner-header banner-right-top-header">
-                <span class="italic">Summer</span>
-                <span class="thin">Party</span>
-                <span class="small">Collection</span>
+                <div class="banner-right-top-header-wrapper">
+                    <span class="italic">Summer</span>
+                    <span class="thin">Party</span>
+                    <span class="small">Collection</span>
+                </div>
             </h2>
-
         </a>
+
         <a href="#" class="banner-right-bottom-left">
             <div class="banner-right-bottom-left-img">
                 <img src="img/banner-picture-right-bottom-left.jpg">
             </div>
             <h2 class="banner-header banner-right-bottom-left-header">
-                <span class="thin">Best sellers</span>
+                <span>Best sellers  ></span>
             </h2>
         </a>
+
         <a href="#" class="banner-right-bottom-right">
             <div class="banner-right-bottom-right-img">
                 <img src="img/banner-picture-right-bottom-right.jpg">
@@ -268,52 +314,61 @@
             <div class="banner-header banner-right-bottom-right-header">
                 <h2>Fall<br>leather</h2>
                 <div class="btn banner-btn">
-                    <span>Shop now</span>
+                    <span>Shop now<span class="icon-arrow-right"></span></span>
                 </div>
             </div>
         </a>
+
     </div>
 </div>
 
-<section class="main-content-carusel">
+<section class="main-content-carousel">
     <div class="container-centerer">
 
-        <nav class="carusel-nav">
+        <nav class="carousel-nav">
             <ul>
-                <li><a href="#" class="carusel-nav-active">What's hot?</a></li>
+                <li><a href="#" class="carousel-nav-active">What's hot?</a></li>
                 <li><a href="#">Designers</a></li>
                 <li><a href="#">Featured</a></li>
                 <li><a href="#">Latest</a></li>
             </ul>
         </nav>
 
-        <div class="carusel-nav-arrows">
-            <div class="arrow">
-                <svg class="cls-2" width="100%" height="100%">
+        <div class="carousel-nav-arrows">
+            <div class="arrow arrow-previous">
+                <svg class="scl2" width="100%" height="100%">
                     <use xlink:href="#arrow-back"/>
                 </svg>
             </div>
-            <div class="arrow carusel-nav-arrow-active">
-                <svg class="cls-2" width="100%" height="100%">
+            <div class="arrow arrow-next arrow-active">
+                <svg class="icon-arrow-active " width="100%" height="100%">
                     <use xlink:href="#arrow-next"/>
                 </svg>
             </div>
         </div>
 
     </div>
-    <div class="carusel-content">
+    <div class="carousel-content">
+
 
         <article class="item">
             <a href="#" class="item-picture">
-                <img src="img/carusel-item_1.png">
+                <img src="img/carousel-item_1.png">
+                <div class="shop-it">
+                    <div class="shop-it-wrapper">
+                        <span class="shop-it-icon"></span>
+                        <span class="shop-it-text">Shop it</span>
+                    </div>
+                </div>
             </a>
             <div class="item-description">
                 <a href="#" class="item-description-link">
                     <h3 class="item-name">Mimosa lace dress</h3>
                     <span class="item-price">$76.95</span>
                 </a>
-                <form method="post" id="carusel-addToCart" action="/addToCart">
-                    <button class="btn btn-addToCart-form" type="submit">Add to cart
+                <form method="post" id="carousel-addToCart" action="/addToCart">
+                    <button class="btn btn-addToCart-form" type="submit">
+                        <span>Add to cart</span>
                         <svg class="icon-plus_cls-1" width="100%" height="100%">
                             <use xlink:href="#icon-plus"/>
                         </svg>
@@ -322,7 +377,344 @@
             </div>
         </article>
 
+        <article class="item">
+            <a href="#" class="item-picture">
+                <img src="img/carousel-item_2.png">
+                <span class="sale-sign"></span>
+                <div class="shop-it">
+                    <div class="shop-it-wrapper">
+                        <span class="shop-it-icon"></span>
+                        <span class="shop-it-text">Shop it</span>
+                    </div>
+                </div>
+            </a>
+            <div class="item-description">
+                <a href="#" class="item-description-link">
+                    <h3 class="item-name">Feel tank</h3>
+                    <span class="item-price">$59.95</span>
+                </a>
+                <form method="post" id="carousel-addToCart" action="/addToCart">
+                    <button class="btn btn-addToCart-form" type="submit">
+                        <span>Add to cart</span>
+                        <svg class="icon-plus_cls-1" width="100%" height="100%">
+                            <use xlink:href="#icon-plus"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </article>
+
+        <article class="item">
+            <a class="item-picture">
+                <img src="img/clearance-item_3.png">
+                <div class="shop-it">
+                    <div class="shop-it-wrapper">
+                        <span class="shop-it-icon"></span>
+                        <span class="shop-it-text">Shop it</span>
+                    </div>
+                </div>
+            </a>
+
+            <div class="item-description">
+                <a href="#" class="item-description-link">
+                    <h3 class="item-name">Gooding shorts</h3>
+                    <span class="item-price">$79.95</span>
+                </a>
+
+                <form method="post" id="carousel-addToCart" action="/addToCart">
+                    <button class="btn btn-addToCart-form" type="submit">
+                        <span>Add to cart</span>
+                        <svg class="icon-plus_cls-1" width="100%" height="100%">
+                            <use xlink:href="#icon-plus"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </article>
+
+        <article class="item">
+            <a class="item-picture">
+                <img src="img/clearance-item_1.png">
+                <div class="shop-it">
+                    <div class="shop-it-wrapper">
+                        <span class="shop-it-icon"></span>
+                        <span class="shop-it-text">Shop it</span>
+                    </div>
+                </div>
+            </a>
+
+            <div class="item-description">
+                <a href="#" class="item-description-link">
+                    <h3 class="item-name">Mimosa lace dress</h3>
+                    <span class="item-price">$76.95</span>
+                </a>
+
+                <form method="post" id="carousel-addToCart" action="/addToCart">
+                    <button class="btn btn-addToCart-form" type="submit">
+                        <span>Add to cart</span>
+                        <svg class="icon-plus_cls-1" width="100%" height="100%">
+                            <use xlink:href="#icon-plus"/>
+                        </svg>
+
+                    </button>
+                </form>
+            </div>
+        </article>
+
+        <article class="item">
+            <a class="item-picture">
+                <img src="img/clearance-item_2.png">
+                <span class="sale-sign"></span>
+                <div class="shop-it">
+                    <div class="shop-it-wrapper">
+                        <span class="shop-it-icon"></span>
+                        <span class="shop-it-text">Shop it</span>
+                    </div>
+                </div>
+            </a>
+
+            <div class="item-description">
+                <a href="#" class="item-description-link">
+                    <h3 class="item-name">Sofi blouse</h3>
+                    <span class="item-price">$26.95</span>
+                </a>
+
+                <form method="post" id="carousel-addToCart" action="/addToCart">
+                    <button class="btn btn-addToCart-form" type="submit">
+                        <span>Add to cart</span>
+                        <svg class="icon-plus_cls-1" width="100%" height="100%">
+                            <use xlink:href="#icon-plus"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </article>
+
+        <article class="item">
+            <a href="#" class="item-picture">
+                <img src="img/carousel-item_3.png">
+                <div class="shop-it">
+                    <div class="shop-it-wrapper">
+                        <span class="shop-it-icon"></span>
+                        <span class="shop-it-text">Shop it</span>
+                    </div>
+                </div>
+            </a>
+            <div class="item-description">
+                <a href="#" class="item-description-link">
+                    <h3 class="item-name">Hot shorts</h3>
+                    <span class="item-price">$35.95</span>
+                </a>
+                <form method="post" id="carousel-addToCart" action="/addToCart">
+                    <button class="btn btn-addToCart-form" type="submit">
+                        <span>Add to cart</span>
+                        <svg class="icon-plus_cls-1" width="100%" height="100%">
+                            <use xlink:href="#icon-plus"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </article>
+
+        <article class="item">
+            <a href="#" class="item-picture">
+                <img src="img/carousel-item_4.png">
+                <span class="sale-sign"></span>
+                <div class="shop-it">
+                    <div class="shop-it-wrapper">
+                        <span class="shop-it-icon"></span>
+                        <span class="shop-it-text">Shop it</span>
+                    </div>
+                </div>
+            </a>
+            <div class="item-description">
+                <a href="#" class="item-description-link">
+                    <h3 class="item-name">Petrol sweater</h3>
+                    <span class="item-price">$21.50</span>
+                </a>
+                <form method="post" id="carousel-addToCart" action="/addToCart">
+                    <button class="btn btn-addToCart-form" type="submit">
+                        <span>Add to cart</span>
+                        <svg class="icon-plus_cls-1" width="100%" height="100%">
+                            <use xlink:href="#icon-plus"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </article>
+
+        <article class="item">
+            <a href="#" class="item-picture">
+                <img src="img/carousel-item_5.png">
+                <div class="shop-it">
+                    <div class="shop-it-wrapper">
+                        <span class="shop-it-icon"></span>
+                        <span class="shop-it-text">Shop it</span>
+                    </div>
+                </div>
+            </a>
+            <div class="item-description">
+                <a href="#" class="item-description-link">
+                    <h3 class="item-name">Flower dress</h3>
+                    <span class="item-price">$54.50</span>
+                </a>
+                <form method="post" id="carousel-addToCart" action="/addToCart">
+                    <button class="btn btn-addToCart-form" type="submit">
+                        <span>Add to cart</span>
+                        <svg class="icon-plus_cls-1" width="100%" height="100%">
+                            <use xlink:href="#icon-plus"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </article>
+
+        <article class="item">
+            <a href="#" class="item-picture">
+                <img src="img/carousel-item_6.png">
+                <span class="sale-sign"></span>
+                <div class="shop-it">
+                    <div class="shop-it-wrapper">
+                        <span class="shop-it-icon"></span>
+                        <span class="shop-it-text">Shop it</span>
+                    </div>
+                </div>
+            </a>
+            <div class="item-description">
+                <a href="#" class="item-description-link">
+                    <h3 class="item-name">Rainbow dress</h3>
+                    <span class="item-price">$75.50</span>
+                </a>
+                <form method="post" id="carousel-addToCart" action="/addToCart">
+                    <button class="btn btn-addToCart-form" type="submit">
+                        <span>Add to cart</span>
+                        <svg class="icon-plus_cls-1" width="100%" height="100%">
+                            <use xlink:href="#icon-plus"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </article>
+
+        <article class="item">
+            <a href="#" class="item-picture">
+                <img src="img/carousel-item_7.png">
+                <div class="shop-it">
+                    <div class="shop-it-wrapper">
+                        <span class="shop-it-icon"></span>
+                        <span class="shop-it-text">Shop it</span>
+                    </div>
+                </div>
+            </a>
+            <div class="item-description">
+                <a href="#" class="item-description-link">
+                    <h3 class="item-name">Geometric dress</h3>
+                    <span class="item-price">$80.50</span>
+                </a>
+                <form method="post" id="carousel-addToCart" action="/addToCart">
+                    <button class="btn btn-addToCart-form" type="submit">
+                        <span>Add to cart</span>
+                        <svg class="icon-plus_cls-1" width="100%" height="100%">
+                            <use xlink:href="#icon-plus"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </article>
+
+        <article class="item">
+            <a href="#" class="item-picture">
+                <img src="img/carousel-item_8.png">
+                <span class="sale-sign"></span>
+                <div class="shop-it">
+                    <div class="shop-it-wrapper">
+                        <span class="shop-it-icon"></span>
+                        <span class="shop-it-text">Shop it</span>
+                    </div>
+                </div>
+            </a>
+            <div class="item-description">
+                <a href="#" class="item-description-link">
+                    <h3 class="item-name">Strap dress</h3>
+                    <span class="item-price">$65.50</span>
+                </a>
+                <form method="post" id="carousel-addToCart" action="/addToCart">
+                    <button class="btn btn-addToCart-form" type="submit">
+                        <span>Add to cart</span>
+                        <svg class="icon-plus_cls-1" width="100%" height="100%">
+                            <use xlink:href="#icon-plus"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </article>
+
+        <article class="item">
+            <a href="#" class="item-picture">
+                <img src="img/carousel-item_9.png">
+                <div class="shop-it">
+                    <div class="shop-it-wrapper">
+                        <span class="shop-it-icon"></span>
+                        <span class="shop-it-text">Shop it</span>
+                    </div>
+                </div>
+            </a>
+            <div class="item-description">
+                <a href="#" class="item-description-link">
+                    <h3 class="item-name"> dress</h3>
+                    <span class="item-price">$68.50</span>
+                </a>
+                <form method="post" id="carousel-addToCart" action="/addToCart">
+                    <button class="btn btn-addToCart-form" type="submit">
+                        <span>Add to cart</span>
+                        <svg class="icon-plus_cls-1" width="100%" height="100%">
+                            <use xlink:href="#icon-plus"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </article>
+
+        <article class="item">
+            <a class="item-picture">
+                <img src="img/clearance-item_4.png">
+                <span class="sale-sign"></span>
+                <div class="shop-it">
+                    <div class="shop-it-wrapper">
+                        <span class="shop-it-icon"></span>
+                        <span class="shop-it-text">Shop it</span>
+                    </div>
+                </div>
+            </a>
+
+            <div class="item-description">
+                <a href="#" class="item-description-link">
+                    <h3 class="item-name">Mimosa lace dress</h3>
+                    <span class="item-price">$76</span>
+                </a>
+
+                <form method="post" id="carousel-addToCart" action="/addToCart">
+                    <button class="btn btn-addToCart-form" type="submit">
+                        <span>Add to cart</span>
+                        <svg class="icon-plus_cls-1" width="100%" height="100%">
+                            <use xlink:href="#icon-plus"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+        </article>
+
     </div>
+
+    <div class="load-more">
+        <form method="post" id="carousel-loadMore" action="/loadMore">
+            <button class="btn-loadmore-form" type="submit">
+                <span>Load more</span>
+            </button>
+        </form>
+    </div>
+
 </section>
 <section class="clearance">
     <div class="container-centerer">
@@ -332,29 +724,44 @@
         <div class="clearance-content">
 
             <article class="item">
-            <a class="item-picture">
-                <img src="img/clearance-item_1.png">
-            </a>
-
-            <div class="item-description">
-                <a href="#" class="item-description-link">
-                    <h3 class="item-name">Mimosa lace dress</h3>
-                    <span class="item-price">$76.95</span>
+                <a class="item-picture">
+                    <img src="img/clearance-item_1.png">
+                    <div class="shop-it">
+                        <div class="shop-it-wrapper">
+                            <span class="shop-it-icon"></span>
+                            <span class="shop-it-text">Shop it</span>
+                        </div>
+                    </div>
                 </a>
 
-                <form method="post" id="clearance-addToCart" action="/addToCart">
-                    <button class="btn btn-addToCart-form" type="submit">Add to cart
-                        <svg class="icon-plus_cls-1" width="100%" height="100%">
-                            <use xlink:href="#icon-plus"/>
-                        </svg>
-                    </button>
-                </form>
-            </div>
-        </article>
+                <div class="item-description">
+                    <a href="#" class="item-description-link">
+                        <h3 class="item-name">Mimosa lace dress</h3>
+                        <span class="item-price">$76.95</span>
+                    </a>
+
+                    <form method="post" id="clearance-addToCart" action="/addToCart">
+                        <button class="btn btn-addToCart-form" type="submit">
+                            <span>Add to cart</span>
+                            <svg class="icon-plus_cls-1" width="100%" height="100%">
+                                <use xlink:href="#icon-plus"/>
+                            </svg>
+
+                        </button>
+                    </form>
+                </div>
+            </article>
 
             <article class="item">
                 <a class="item-picture">
                     <img src="img/clearance-item_2.png">
+                    <span class="sale-sign"></span>
+                    <div class="shop-it">
+                        <div class="shop-it-wrapper">
+                            <span class="shop-it-icon"></span>
+                            <span class="shop-it-text">Shop it</span>
+                        </div>
+                    </div>
                 </a>
 
                 <div class="item-description">
@@ -364,7 +771,8 @@
                     </a>
 
                     <form method="post" id="clearance-addToCart" action="/addToCart">
-                        <button class="btn btn-addToCart-form" type="submit">Add to cart
+                        <button class="btn btn-addToCart-form" type="submit">
+                            <span>Add to cart</span>
                             <svg class="icon-plus_cls-1" width="100%" height="100%">
                                 <use xlink:href="#icon-plus"/>
                             </svg>
@@ -376,6 +784,12 @@
             <article class="item">
                 <a class="item-picture">
                     <img src="img/clearance-item_3.png">
+                    <div class="shop-it">
+                        <div class="shop-it-wrapper">
+                            <span class="shop-it-icon"></span>
+                            <span class="shop-it-text">Shop it</span>
+                        </div>
+                    </div>
                 </a>
 
                 <div class="item-description">
@@ -385,7 +799,8 @@
                     </a>
 
                     <form method="post" id="clearance-addToCart" action="/addToCart">
-                        <button class="btn btn-addToCart-form" type="submit">Add to cart
+                        <button class="btn btn-addToCart-form" type="submit">
+                            <span>Add to cart</span>
                             <svg class="icon-plus_cls-1" width="100%" height="100%">
                                 <use xlink:href="#icon-plus"/>
                             </svg>
@@ -397,6 +812,13 @@
             <article class="item">
                 <a class="item-picture">
                     <img src="img/clearance-item_4.png">
+                    <span class="sale-sign"></span>
+                    <div class="shop-it">
+                        <div class="shop-it-wrapper">
+                            <span class="shop-it-icon"></span>
+                            <span class="shop-it-text">Shop it</span>
+                        </div>
+                    </div>
                 </a>
 
                 <div class="item-description">
@@ -406,7 +828,8 @@
                     </a>
 
                     <form method="post" id="clearance-addToCart" action="/addToCart">
-                        <button class="btn btn-addToCart-form" type="submit">Add to cart
+                        <button class="btn btn-addToCart-form" type="submit">
+                            <span>Add to cart</span>
                             <svg class="icon-plus_cls-1" width="100%" height="100%">
                                 <use xlink:href="#icon-plus"/>
                             </svg>
@@ -414,8 +837,16 @@
                     </form>
                 </div>
             </article>
-
         </div>
+
+        <div class="load-more">
+            <form method="post" id="clearance-loadMore" action="/loadMore">
+                <button class="btn-loadmore-form" type="submit">
+                    <span>Load more</span>
+                </button>
+            </form>
+        </div>
+
     </div>
 </section>
 <section class="favourite-brands">
@@ -478,7 +909,7 @@
 
 <section class="about-info">
     <div class="container-centerer">
-        <section class="customer-service">
+        <section class="customer-service about-info-section">
             <h3 class="info-header">Customer service</h3>
             <ul>
                 <li><a href="#">Contact</a></li>
@@ -489,7 +920,7 @@
                 <li><a href="#">Returns and Refunds</a></li>
             </ul>
         </section>
-        <section class="information">
+        <section class="information about-info-section">
             <h3 class="info-header">Information</h3>
             <ul>
                 <li><a href="#">Affiliate</a></li>
@@ -499,7 +930,7 @@
                 <li><a href="#">Investor relations</a></li>
             </ul>
         </section>
-        <section class="campaigns">
+        <section class="campaigns about-info-section">
             <h3 class="info-header">Campaigns</h3>
             <ul>
                 <li><a href="#">Evening dresses</a></li>
@@ -509,7 +940,7 @@
                 <li><a href="#">Special occasion dresses</a></li>
             </ul>
         </section>
-        <section class="stores">
+        <section class="stores about-info-section">
             <h3 class="info-header">Stores</h3>
             <ul>
                 <li><a href="#">Paris</a></li>
@@ -519,7 +950,7 @@
                 <li><a href="#">Tokio</a></li>
             </ul>
         </section>
-        <section class="social">
+        <section class="social about-info-section">
             <h3 class="info-header">Social</h3>
             <a class="social-btn" href="#">
                 <img src="img/icon-tw.png">
@@ -540,9 +971,9 @@
                 <img src="img/icon-v.png">
             </a>
         </section>
-        <div class="icon-secured">
+        <section class="icon-secured about-info-section">
             <img src="img/icon-secured.png">
-        </div>
+        </section>
     </div>
 </section>
 
@@ -555,12 +986,27 @@
             <li><a href="#">Store directory</a></li>
             <li><a href="#">About us</a></li>
         </ul>
+        <div class="footer-nav-mobile_links">
+            <a href="#" class="menu-icon"></a>
+
+            <div class="menu-wrapper">
+                <ul class="menu-mobile">
+                    <li><a href="#">Privacy & cookies</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                    <li><a href="#">Store directory</a></li>
+                    <li><a href="#">About us</a></li>
+                </ul>
+            </div>
+        </div>
         <div class="footer-copyright">
-            <p>© LookShop.com
-            All Rights Reserved</p>
+            <p>© LookShop.com<br>
+                All Rights Reserved</p>
         </div>
     </div>
 </footer>
+
+<script type="text/javascript" charset="utf-8" src="js/carousel.js"></script>
 
 </body>
 </html>
